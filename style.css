@@ -32,7 +32,7 @@ body {
   height: 100%;
   color: #f5424e;
   text-align: center;
-  font-size: 30px;
+  font-size: 24px;
   margin: -40px 0;
 }
 p { 
@@ -42,7 +42,7 @@ margin: 0;
   font-size: 50px;
 }
 .subheader {
-  font-size: 40px;
+  font-size: 35px;
 }
 .strikethrough {
   text-decoration: line-through;
