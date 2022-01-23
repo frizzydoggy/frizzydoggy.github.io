@@ -48,6 +48,9 @@ margin: 0;
 .strikethrough {
   text-decoration: line-through;
 }
+.bold {
+  font-weight: bold;
+}
 .spacing {
   background-color: rgba(0,0,0,0);
   height: 120px;
