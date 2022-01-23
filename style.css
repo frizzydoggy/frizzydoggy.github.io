@@ -54,6 +54,9 @@ margin: 0;
 .bold {
   font-weight: bold;
 }
+.blurple {
+  color: #7289da;
+}
 .spacing {
   background-color: rgba(0,0,0,0);
   height: 120px;
