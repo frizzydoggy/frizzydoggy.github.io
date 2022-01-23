@@ -50,7 +50,11 @@ margin: 0;
 }
 .spacing {
   background-color: rgba(0,0,0,0);
-  height: 200px;
+  height: 180px;
+}
+.lilspacing {
+  background-color: rgba(0,0,0,0);
+  height: 30px;
 }
 .button {
   background-color: #f5424e;
@@ -79,4 +83,12 @@ margin: 0;
 ::-webkit-scrollbar {
     width: 0;
     background: transparent;
+}
+.downbtn {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  background-color: #383838;
+  color: #1a1a1a;
+  text-align: center;
 }
