@@ -19,7 +19,8 @@ body {
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(13, 13, 13, 0.5);
   font-family: SoftMarshmallow;
-  overflow: hidden;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 .icon {
   -webkit-mask-image:-webkit-linear-gradient(top, rgba(0,0,0,1), rgba(0,0,0,0.5) 25%, rgba(0,0,0,0.15) 70%, rgba(0,0,0,0) 90%);
@@ -74,4 +75,8 @@ margin: 0;
   float: left;
   -webkit-mask-image:-webkit-linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0));
   mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
 }
