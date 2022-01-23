@@ -5,6 +5,17 @@ function start() {
     var ageElem = document.getElementById("age");
     ageElem.innerText = getAge("Dec 04 2007 18:00:00 GMT+0000");
     
+    var viewport = document.querySelector("meta[name=viewport]");
+    if (window.devicePixelRatio == 2) {
+        var val = window.outerWidth/window.outerHeight;
+        if (window.outerHeight < 1000) {
+            val = window.outerWidth/window.outerHeight;
+        } else {
+            val = window.outerWidth/window.outerHeight/0.7
+        };
+        viewport.setAttribute('content', 'width=device-width, initial-scale='+val+', maximum-scale='+val+', user-scalable=no');
+    };
+    
     document.getElementsByClassName("downbtn")[0].onclick = function(){
         var box = document.getElementsByClassName("box")[0];
         box.scrollTo({top: box.scrollHeight, behavior:'smooth'}); 
