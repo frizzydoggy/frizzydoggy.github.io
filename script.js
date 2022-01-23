@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function(){
     var ageElem = document.getElementById("age");
     ageElem.innerText = getAge("Dec 04 2007 18:00:00 GMT+0000");
 });
+document.querySelectorAll('[data-link]').forEach(el=>{
+el.onclick = function() {
+window.open(el.dataset.link)
+}});
 function getAge(dateString) {
     var today = new Date();
     var birthDate = new Date(dateString);
