@@ -3,6 +3,7 @@ body {
 }
 
 .box {
+  color: #f5424e;
   margin: 0;
   position: absolute;
   top: 50%;
