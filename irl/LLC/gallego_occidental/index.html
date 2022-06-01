@@ -11,10 +11,10 @@ var page = document.getElementById("page").value;
 var container = document.getElementById('holder');
   
 function renderPDF(url, canvasContainer) {
-  var page = 5;
+  var page = 1;
   function renderPage(page) {
       canvasContainer.innerHTML = '';
-      var viewport = page.getViewport(1);
+      var viewport = page.getViewport(5);
       var canvas = document.createElement('canvas');
       var ctx = canvas.getContext('2d');
       var renderContext = {
