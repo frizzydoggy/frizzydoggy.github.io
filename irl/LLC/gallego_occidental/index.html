@@ -27,7 +27,7 @@ function renderPage(page) {
     page.render(renderContext);
 };
   
-function start(pdfDoc) {
+function start(url, pdfDoc) {
   
   function pageNext() {
     if (page < pdfDoc.numPages) {
@@ -63,8 +63,10 @@ function start(pdfDoc) {
   }
   pdfDoc.getPage(page).then(renderPage);
 };
+  function renderPDF(url) {
     PDFJS.disableWorker = true;
     PDFJS.getDocument(url).then(start);
+  };
 renderPDF('trabajo.pdf', container);
   //Took code from StackOverflow as im in a rush and cant code rn this assignment is due tomorrow sorry
   //(Teacher didn't add a way to turn it in so like this is the coolest probs)
