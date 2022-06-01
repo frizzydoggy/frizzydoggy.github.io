@@ -26,46 +26,45 @@ function renderPage(page) {
 
     page.render(renderContext);
 };
-  
-function start(url, pdfDoc) {
-  
-  function pageNext() {
-    if (page < pdfDoc.numPages) {
-      page = page + 1
-      pdfDoc.getPage(page).then(renderPage);
-    }
-  }
-  
-  function pageBack() {
-    if (page > 1) {
-      page = page - 1
-      pdfDoc.getPage(page).then(renderPage);
-    }
-  }
-  document.onkeydown = checkKey;
+function renderPDF(url, container) {
+  function start(pdfDoc) {
 
-  function checkKey(e) {
-      e = e || window.event;
-      if (e.keyCode == '38') {
-          pageBack();
+    function pageNext() {
+      if (page < pdfDoc.numPages) {
+        page = page + 1
+        pdfDoc.getPage(page).then(renderPage);
       }
-      else if (e.keyCode == '40') {
-          pageNext();
+    }
+
+    function pageBack() {
+      if (page > 1) {
+        page = page - 1
+        pdfDoc.getPage(page).then(renderPage);
       }
-      else if (e.keyCode == '37') {
-         pageBack();
-      }
-      else if (e.keyCode == '39') {
-         pageNext();
-      } else if (e.keyCode == '32') {
-          pageNext();
-      }
-  }
-  pdfDoc.getPage(page).then(renderPage);
-};
-  function renderPDF(url) {
-    PDFJS.disableWorker = true;
-    PDFJS.getDocument(url).then(start);
+    }
+    document.onkeydown = checkKey;
+
+    function checkKey(e) {
+        e = e || window.event;
+        if (e.keyCode == '38') {
+            pageBack();
+        }
+        else if (e.keyCode == '40') {
+            pageNext();
+        }
+        else if (e.keyCode == '37') {
+           pageBack();
+        }
+        else if (e.keyCode == '39') {
+           pageNext();
+        } else if (e.keyCode == '32') {
+            pageNext();
+        }
+    }
+    pdfDoc.getPage(page).then(renderPage);
+  };
+   PDFJS.disableWorker = true;
+   PDFJS.getDocument(url).then(start);
   };
 renderPDF('trabajo.pdf', container);
   //Took code from StackOverflow as im in a rush and cant code rn this assignment is due tomorrow sorry
