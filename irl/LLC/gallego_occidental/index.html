@@ -22,8 +22,8 @@ function renderPDF(url, canvasContainer) {
         viewport: viewport
       };
 
-      canvas.height = "1920";
-      canvas.width = "1080";
+      canvas.height = "1080";
+      canvas.width = "1920";
       canvasContainer.appendChild(canvas);
 
       page.render(renderContext);
