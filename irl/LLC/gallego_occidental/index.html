@@ -27,6 +27,7 @@ function renderPage(page) {
     page.render(renderContext);
 };
 function renderPDF(url, container) {
+  var page = 1;
   function start(pdfDoc) {
 
     function pageNext() {
