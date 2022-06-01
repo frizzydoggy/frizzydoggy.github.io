@@ -11,7 +11,7 @@ var page = document.getElementById("page").value;
 var container = document.getElementById('holder');
   
 function renderPDF(url, canvasContainer) {
-  var page = 1;
+  var page = 5;
   function renderPage(page) {
       canvasContainer.innerHTML = '';
       var viewport = page.getViewport(1);
@@ -24,8 +24,8 @@ function renderPDF(url, canvasContainer) {
 
       canvas.height = viewport.height;
       canvas.width = viewport.width;
-      canvas.style.width = "1920px";
-      canvas.style.height = "1080px";
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
       canvasContainer.appendChild(canvas);
 
       page.render(renderContext);
