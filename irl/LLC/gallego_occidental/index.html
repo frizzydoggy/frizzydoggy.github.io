@@ -10,24 +10,24 @@
 var page = document.getElementById("page").value;
 var container = document.getElementById('holder');
   
-function renderPage(page) {
-    canvasContainer.innerHTML = '';
-    var viewport = page.getViewport(1);
-    var canvas = document.createElement('canvas');
-    var ctx = canvas.getContext('2d');
-    var renderContext = {
-      canvasContext: ctx,
-      viewport: viewport
-    };
-
-    canvas.height = "1920";
-    canvas.width = "1080";
-    canvasContainer.appendChild(canvas);
-
-    page.render(renderContext);
-};
-function renderPDF(url, container) {
+function renderPDF(url, canvasContainer) {
   var page = 1;
+  function renderPage(page) {
+      canvasContainer.innerHTML = '';
+      var viewport = page.getViewport(1);
+      var canvas = document.createElement('canvas');
+      var ctx = canvas.getContext('2d');
+      var renderContext = {
+        canvasContext: ctx,
+        viewport: viewport
+      };
+
+      canvas.height = "1920";
+      canvas.width = "1080";
+      canvasContainer.appendChild(canvas);
+
+      page.render(renderContext);
+  };
   function start(pdfDoc) {
 
     function pageNext() {
